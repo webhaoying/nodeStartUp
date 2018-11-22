@@ -54,6 +54,7 @@ let upload = (response,request)=>{
 }
 function show(response, postData) {
     console.log("Request handler 'show' was called.");
+    //  formidable会将上传的组件默认的放到／tmp路径下
     fs.readFile("/tmp/test.png", "binary", function(error, file) {
       if(error) {
         response.writeHead(500, {"Content-Type": "text/plain"});
